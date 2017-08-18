@@ -24,3 +24,5 @@ Setting up your App
 ##Changing the Database Query
 
 Update query in index.php
+
+---
