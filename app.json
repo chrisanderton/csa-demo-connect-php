@@ -1,8 +1,22 @@
 {
-  "name": "Start on Heroku: PHP",
-  "description": "A barebones PHP app that makes use of the Silex web framework",
-  "repository": "https://github.com/heroku/php-getting-started",
-  "addons": [],
+  "name": "moo",
+  "description": "moo",
+  "addons": [
+    {
+      "plan": "heroku-redis:premium-1",
+      "options": {
+        "version": "3.2"
+      }
+    },
+    {
+      "plan": "cloudamqp:lemur"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/WilhelmKleuSage/dotnetcore-buildpack"
+    }
+  ],
   "env":{
     "HEROKU_APP_NAME": {
       "required": false
@@ -10,5 +24,14 @@
     "HEROKU_PARENT_APP_NAME": {
       "required": false
     }
-  }
+  },
+  "formation": {
+    "web": { 
+      "quantity": 1
+    },
+    "worker": { 
+      "quantity": 1
+    }
+  },
+  "stack": "heroku-16"
 }
