@@ -7,7 +7,7 @@
     "test": {
       "scripts": {
         "test-setup": "/app/sonar/sonar.sh",
-	"test": "echo helloworld"
+	"test": "echo helloworld 2"
       }
     }
   }
